@@ -55,7 +55,7 @@
 \graphicspath{{graphics/}}
 
 % calculate tight bounding boxes
-%\usepackage{epspdfconversion}
+\usepackage[bbox,pdftopdf]{epspdfconversion}
 %\usepackage{epstopdf}
 %\epstopdfsetup{pdftopdf=true}
 %\epstopdfDeclareGraphicsRule{.pdf}{pdf}{.pdf}{% 
@@ -381,7 +381,7 @@ colnames(Gendernewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Approximately half of the respondents fall between the ages of 26 and 35 years old with additional one-third between the ages of 21 and 25. While sample consist of more female than male respondents the distribution of age characteristics across genders is very similar.
 }}
-\vspace{-100pt}
+%\vspace{-100pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraph, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", out.width="\\textwidth", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
@@ -393,7 +393,7 @@ plot + theme(panel.margin=unit(0,"lines"))
 rm(plot)
 @
 \end{figure}
-\vspace{-115pt}
+%\vspace{-115pt}
 %
 % Other PIE polar Chart examples 
 % http://docs.ggplot2.org/current/coord_polar.html
