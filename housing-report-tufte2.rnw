@@ -413,7 +413,7 @@ Approximately half of the respondents fall between the ages of 26 and 35 years o
 #par(mar=c(0,0,0,0)) # Remove unnecessary margins
 plot <- ggplot(newdata, aes(x = factor(1), fill=Age)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('Number of Respondents') + labs(fill='Response') + facet_grid(facets=. ~ Gender)
 plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
-plot + theme(panel.margin=unit(0,"lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
 #plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
 rm(plot)
 @
@@ -646,7 +646,11 @@ space for description}}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphlevel, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
-ggplot(levelnewdata, aes(x = factor(1), fill=Level)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(levelnewdata, aes(x = factor(1), fill=Level)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -765,7 +769,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphFulltime, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Fulltime)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(newdata, aes(x = factor(1), fill=Fulltime)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -883,7 +891,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphInternational, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=International)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='International?')
+plot <- ggplot(newdata, aes(x = factor(1), fill=International)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='International?')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1006,7 +1018,11 @@ Space for description.}}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphResidencetype, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
-ggplot(Residencetypenewdata, aes(x = factor(1), fill=Residencetype)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(Residencetypenewdata, aes(x = factor(1), fill=Residencetype)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1147,7 +1163,11 @@ Space for description.}}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphHouseholdsize, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
-ggplot(Householdsizenewdata, aes(x = factor(1), fill=Householdsize)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(Householdsizenewdata, aes(x = factor(1), fill=Householdsize)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1272,7 +1292,11 @@ Space for description.}}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphRent, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
-ggplot(Rentnewdata, aes(x = factor(1), fill=Rent)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(Rentnewdata, aes(x = factor(1), fill=Rent)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1395,7 +1419,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphNeedfordorm, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Needfordorm)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Is it needed?')
+plot <- ggplot(newdata, aes(x = factor(1), fill=Needfordorm)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Is it needed?')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1492,7 +1520,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphIfavailable, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Ifavailable)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Ifavailable?')
+plot <- ggplot(newdata, aes(x = factor(1), fill=Ifavailable)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Ifavailable?')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1591,7 +1623,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphQ11, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(, aes(x = factor(1), fill=Q11)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Housing preference')
+plot <- ggplot(, aes(x = factor(1), fill=Q11)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Housing preference')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -1927,7 +1963,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphWouldyoulive, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Wouldyoulive)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Wouldyoulive?')
+plot <- ggplot(newdata, aes(x = factor(1), fill=Wouldyoulive)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Wouldyoulive?')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -2035,7 +2075,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphHowmuch, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Howmuch)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Howmuch?')
+plot <- ggplot(newdata, aes(x = factor(1), fill=Howmuch)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Howmuch?')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -2143,7 +2187,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphWithundergrads, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Withundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live with\nundergraduates?", labels=c("No =  would live", "Yes = would not live"))
+plot <- ggplot(newdata, aes(x = factor(1), fill=Withundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live with\nundergraduates?", labels=c("No =  would live", "Yes = would not live"))
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -2244,7 +2292,11 @@ Space for description.}}
 \vspace{-20pt}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphNexttoundergrads, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
-ggplot(newdata, aes(x = factor(1), fill=Nexttoundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live next\nto undergraduates?", labels=c("No =  would live", "Yes = would not live"))
+plot <- ggplot(newdata, aes(x = factor(1), fill=Nexttoundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live next\nto undergraduates?", labels=c("No =  would live", "Yes = would not live"))
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
@@ -2356,7 +2408,11 @@ Space for description.}}
 <<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphTransportation, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
-ggplot(Transportationnewdata, aes(x = factor(1), fill=Transportation)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- ggplot(Transportationnewdata, aes(x = factor(1), fill=Transportation)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
+plot <- plot + theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+plot + theme(panel.margin=unit(0,"lines"),axis.ticks=theme_blank(),axis.text.y=theme_blank())
+#plot + theme(plot.margin= unit(c(0, 0, 0, 0), "cm"))
+rm(plot)
 @
 \end{figure}
 
