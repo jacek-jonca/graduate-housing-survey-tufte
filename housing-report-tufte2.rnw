@@ -8,7 +8,19 @@
 \usepackage{luacode,fontspec,xunicode}
 
 \usepackage{sectsty} %% change fonts for sections
-\setmainfont{Source Sans Pro Light}
+%\setmainfont{Source Sans Pro Light}
+
+\setmainfont[
+ BoldFont={Source Sans Pro}, 
+ ItalicFont={Source Sans Pro Light Italic},
+ BoldItalicFont={Source Sans Pro Italic}
+ ]{Source Sans Pro Light}
+
+%\setmainfont[
+% BoldFont={Source Sans Pro Light}, 
+% ItalicFont={Source Sans Pro ExtraLight Italic},
+% BoldItalicFont={Source Sans Pro Light Italic}
+% ]{Source Sans Pro ExtraLight}
 
 %Specify fonts
 %\fontspec
@@ -16,6 +28,19 @@
 %ItalicFont = SourceSansPro-LightIt.otf ,
 %BoldItalicFont = SourceSansPro-It.otf ]
 %{SourceSansPro-Light.otf}
+
+%\fontspec
+%[ Extension = .otf ,
+%BoldFont = SourceSansPro-Regular ,
+%ItalicFont = SourceSansPro-LightIt ]
+%{SourceSansPro-Light}
+
+%\fontspec
+%[ Path = /home/zephyr/Dropbox/latex-typesetting/graduate-housing-survey-tufte/fonts/otf/ ,
+%UprightFont = *-Regular ,
+%BoldFont = *-Bold ,
+%... ]
+%{SourceSansPro}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,positioning,matrix}
@@ -382,7 +407,7 @@ colnames(Gendernewtable) <- c('Count', 'Percentage')
 Approximately half of the respondents fall between the ages of 26 and 35 years old with additional one-third between the ages of 21 and 25. While sample consist of more female than male respondents the distribution of age characteristics across genders is very similar.
 }}
 %\vspace{-100pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraph, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", out.width="\\textwidth", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 #par(mar=c(0,0,0,0)) # Remove unnecessary margins
@@ -618,7 +643,7 @@ colnames(Levelnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 space for description}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphlevel, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 ggplot(levelnewdata, aes(x = factor(1), fill=Level)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
@@ -738,7 +763,7 @@ colnames(Fulltimenewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphFulltime, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Fulltime)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
 @
@@ -856,7 +881,7 @@ colnames(Internationalnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphInternational, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=International)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='International?')
 @
@@ -978,7 +1003,7 @@ colnames(Residencetypenewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-80pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphResidencetype, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 ggplot(Residencetypenewdata, aes(x = factor(1), fill=Residencetype)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
@@ -1119,7 +1144,7 @@ colnames(Householdsizenewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphHouseholdsize, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 ggplot(Householdsizenewdata, aes(x = factor(1), fill=Householdsize)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
@@ -1244,7 +1269,7 @@ colnames(Rentnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphRent, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 ggplot(Rentnewdata, aes(x = factor(1), fill=Rent)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
@@ -1368,7 +1393,7 @@ colnames(Needfordormnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphNeedfordorm, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Needfordorm)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Is it needed?')
 @
@@ -1465,7 +1490,7 @@ colnames(Ifavailablenewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphIfavailable, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Ifavailable)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Ifavailable?')
 @
@@ -1564,7 +1589,7 @@ colnames(Q11newtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphQ11, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(, aes(x = factor(1), fill=Q11)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Housing preference')
 @
@@ -1844,7 +1869,7 @@ write.csv(Interest.df, 'InterestDorm.csv')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphQ12, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 
 ### Finally create the graph in ggplot2 ###
@@ -1900,7 +1925,7 @@ colnames(Wouldyoulivenewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphWouldyoulive, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Wouldyoulive)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Wouldyoulive?')
 @
@@ -2008,7 +2033,7 @@ colnames(Howmuchnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphHowmuch, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Howmuch)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Howmuch?')
 @
@@ -2116,7 +2141,7 @@ colnames(Withundergradsnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphWithundergrads, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Withundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live with\nundergraduates?", labels=c("No =  would live", "Yes = would not live"))
 @
@@ -2217,7 +2242,7 @@ colnames(Nexttoundergradsnewtable) <- c('Count', 'Percentage')
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphNexttoundergrads, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 ggplot(newdata, aes(x = factor(1), fill=Nexttoundergrads)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + scale_fill_discrete(name="Would NOT live next\nto undergraduates?", labels=c("No =  would live", "Yes = would not live"))
 @
@@ -2328,7 +2353,7 @@ percent <- function(x, digits = 2, format = "f", ...)
 \scriptsize{\newline
 Space for description.}}
 \vspace{-20pt}
-<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+<<echo=FALSE,cache=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 #<<mygraphTransportation, cache=FALSE, echo=FALSE, messages=FALSE, warnings=FALSE, results="asis", fig.lp="fig:", fig.cap = ''>>=
 #print(formatedagetable)
 ggplot(Transportationnewdata, aes(x = factor(1), fill=Transportation)) + geom_bar(width = 0.6) + coord_polar(theta="y") + xlab('') + ylab('') + labs(fill='Response')
@@ -2461,7 +2486,7 @@ The Japanese \textyen \hspace{1pt} strengthened by 370\% versus the US\$ from 19
 \scriptsize{\newline
 While not specifically relevant to this chart, I include the shaded areas and dots to put the recent holding periods in the context of a much larger process. The light gray shaded areas represent holding periods for --------.  Green dots are entry dates, and red dots are exit dates.\newline\newline\newline source: Federal Reserve Economic Data (FRED) from the Federal Reserve Bank of St. Louis}}
 \vspace{-20pt}
-%<<echo=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+%<<echo=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 \end{figure}
 \vspace{-10pt}
 
@@ -2482,7 +2507,7 @@ Since perfect timing of the top/bottom is impossible, we very systematically beg
 \scriptsize{\newline
 Light gray shaded areas represent holding periods for --------.  Green dots are entry dates, and red dots are exit dates.\newline\newline\newline source: Federal Reserve Economic Data (FRED) from the Federal Reserve Bank of St. Louis}}
 \vspace{-20pt}
-%<<echo=FALSE,eval=TRUE,out.width='1.05\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
+%<<echo=FALSE,eval=TRUE,out.width='1.00\\linewidth',fig.align='left',warning=FALSE,message=FALSE,error=FALSE>>=
 \end{figure}
 \vspace{-10pt}
 
